@@ -1600,10 +1600,16 @@
     </svg>
 
     <script>
+        var dict = [
+            "US", "CA", "MX", "BR", "UK", "FR", "JP", "KR"
+        ];
+
+        $.each(dict, function() {
+            $('#' + this).addClass("HasInfo");
+        });
+
         $(document).ready(function() {
-            console.log("I'm working!")
-            $("svg > path").hover(function() {
-                console.log("This is working!");
+            $("svg > path.HasInfo").hover(function() {
                 $(this).addClass("special-fill")
             }, function() {
                 $(this).removeClass("special-fill");
