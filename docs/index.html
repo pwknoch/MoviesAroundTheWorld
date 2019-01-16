@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+    <style>
+        .special-fill{
+            fill: #0b2e13;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script
+</head>
+<body>
+    <object id="svg1" data="world.svg" type="image/svg+xml"></object>
+<script>
+    jQuery(function($)
+    {
+        $(document).ready(function() {
+            console.log("I'm working!")
+            $("svg > path").hover(function() {
+                console.log("This is working!");
+                this.addClass("special-fill")
+            });
+            $("svg > path").mouseleave(function() {
+                this.removeClass("special-fill")
+            });
+        });
+    })
+</script>
+</body>
+</html>
